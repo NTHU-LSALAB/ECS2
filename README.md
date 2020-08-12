@@ -1,4 +1,4 @@
-# Introduction
+# ECS2 Introduction
 Light GPU Erasure coded storage system without main memory as bounce buffer.
 
 ## Features
@@ -16,12 +16,14 @@ Light GPU Erasure coded storage system without main memory as bounce buffer.
 * Latency reduction from ECS2
     * Read improvement: 17% 
     * Write improvement: 8%
+
 ![Performance](docs/performance.png)
 * Environment
     * CPU: Intel(R)Xeon(R) Gold 6150 CPU @ 2.70GHz
     * GPU: NVIDIA Tesla V100
     * Memory: 126GB 8-channel DDR4memory clocked at 2666 MHz
     * SSD: Intel P4500 2TB SSD
+
 * Testcase
     * Data size: 1GiB
 
@@ -29,8 +31,14 @@ Light GPU Erasure coded storage system without main memory as bounce buffer.
 * Accepted by CLUSTER2020. Link will be available later.
 
 ## Prerequisite & Limitation
-* Modified [libgibraltar](https://github.com/jaredjennings/libgibraltar), a GPU erasure code library. (The diff, To be submitted into this repo in the future.)
+* Modified [libgibraltar](https://github.com/jaredjennings/libgibraltar), a GPU erasure code library. 
+    * Apply ```libgibraltar.patch``` to libgibraltar, and setup libgibraltar environment variable
 * gdrcopy+, a modified version of [gdrcopy](https://github.com/NVIDIA/gdrcopy)
+
+### Environment Variable Setup
+* libgibraltar
+    * GIB_SRC_DIR, $HOME/libgibraltar/src
+    * GIB_CACHE_DIR, $HOME/libgibraltar/ptx
 
 ### gdrcopy+
 #### Run-Time Requirements
